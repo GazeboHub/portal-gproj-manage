@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>${app.user.domain}.openshift.${app.openshift.namespace}</groupId>
+  <artifactId>${app.openshift.name}-${app.openshift.namespace}-manage</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0</version>
+  <name>Application Management Module for the
+  ${app.openshift.name}-${app.openshift.namespace} OpenShift
+  Application</name>
+
+  <properties>
+    <app.openshift.name>portal</app.openshift.name>
+    <app.openshift.namespace>gproj</app.openshift.namespace>
+    <app.user.domain>ws.gazebo</app.user.domain>
+
+    <app.openshift.uid>52a2f112e0b8cd711a000007</app.openshift.uid>
+    <app.openshift.domain
+        >${app.openshfit.name}-${app.openshift.namesapce}.${openshift.origin.domain}</app.openshift.domain>
+    <app.openshift.git
+        >ssh://${app.openshift.uid}@${app.openshift.domain}</app.openshift.git>
+
+    <openshift.origin.domain>rhcloud.com</openshift.origin.domain>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+</project>
