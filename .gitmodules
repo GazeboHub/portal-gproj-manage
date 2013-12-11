@@ -1,0 +1,3 @@
+[submodule "publish/portal-gproj"]
+	path = publish/portal-gproj
+	url = ssh://52a2f112e0b8cd711a000007@portal-gproj.rhcloud.com/~/git/portal.git/
