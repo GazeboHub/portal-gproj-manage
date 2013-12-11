@@ -1,4 +1,9 @@
-/.settings
+# Text
 *~
 *#
+# Java
 *.class
+# Eclipse IDE
+.settings
+# Maven
+target
