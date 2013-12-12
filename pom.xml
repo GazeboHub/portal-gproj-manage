@@ -13,12 +13,13 @@
     <version>1.0</version>
   </parent>
 
+
   <properties>
     <app.openshift.name>portal</app.openshift.name>
     <app.openshift.namespace>gproj</app.openshift.namespace>
     <app.user.domain>ws.gazebo</app.user.domain>
 
-    <app.openshift.uid>52a2f112e0b8cd711a000007</app.openshift.uid>
+    <app.openshift.uid>52a90295500446edad000072</app.openshift.uid>
     <app.openshift.domain
         >${app.openshfit.name}-${app.openshift.namesapce}.${openshift.origin.domain}</app.openshift.domain>
     <app.openshift.git
