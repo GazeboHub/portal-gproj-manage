@@ -6,4 +6,4 @@
 # Eclipse IDE
 .settings
 # Maven
-target
+/target
