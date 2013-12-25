@@ -5,5 +5,5 @@
 ## such that it will specify the user name to use in connecting to
 ##   portal-gproj.rhcloud.com
 
+mkdir -p jbossas
 scp -r portal-gproj.rhcloud.com:jbossas/modules jbossas
-
