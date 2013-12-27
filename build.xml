@@ -45,10 +45,12 @@
   <property name="files.modules.dir"
             value="${app.source.dir}/.openshift/config/modules"/>
 
+  <property name="archive.stagingPath"
+            value="${basedir}/staging/liferay"/>
   <property name="archive.dependencies.path"
-            value="${basedir}/staging/jboss/${archive.dependencies.name}"/>
+            value="${archive.stagingPath}/${archive.dependencies.name}"/>
   <property name="archive.liferay.path"
-            value="${basedir}/staging/jboss/${archive.liferay.name}"/>
+            value="${archive.stagingPath}/${archive.liferay.name}"/>
 
   <!-- Conditions - Files -->
 
@@ -64,12 +66,14 @@
   <!-- Downloads - Archives -->
 
   <target name="download-dependencies" unless="${archive.dependencies.available}">
+    <mkdir dir="${archive.stagingPath}"/>
     <get src="${archive.dependencies.url}"
          dest="${archive.dependencies.path}"
          verbose="false"/>
   </target>
 
   <target name="download-liferay" unless="${archive.liferay.available}">
+    <mkdir dir="${archive.stagingPath}"/>
     <get src="${archive.liferay.url}"
          dest="${archive.liferay.path}"
          verbose="false"/>
