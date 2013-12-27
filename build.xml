@@ -4,14 +4,79 @@
 <!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
 <!-- ====================================================================== -->
 
-<project name="portal-gproj-manage" default="test" basedir=".">
+<project name="portal-gproj-manage" default="test" basedir="."
+         xmlns:if="ant:if"
+         xmlns:unless="ant:unless"
+          >
+
+  <property environment="env"/>
+
+  <echo>Importing properties from pom.xml</echo>
+  <xmlproperty file="pom.xml" keeproot="false"/>
+
+  <property name="app.source.dir"
+            value="publish/${app.openshift.name}-${app.openshift.namespace}"/>
+
+  <!-- Properties - Misc -->
+  <property name="app.liferay.version"
+            value="6.2.0-ce-ga1-20131101192857659"/>
+  <property name="app.liferay.version.name"
+            value="6.2.0 GA1"/>
+
+  <!-- Properties - Archives -->
+
+  <property name="sourceforge.mirror"
+            value="softlayer-dal"/>
+
+  <property name="archive.dependencies.name"
+            value="liferay-portal-dependencies-${app.liferay.version}.zip"/>
+  <property name="archive.dependencies.url"
+            value="http://${sourceforge.mirror}.dl.sourceforge.net/project/lportal/Liferay%20Portal/${app.liferay.version.name}/${archive.dependencies.name}"/>
+
+  <property name="archive.liferay.name"
+            value="liferay-portal-${app.liferay.version}.war"/>
+  <property name="archive.liferay.url"
+            value="http://${sourceforge.mirror}.dl.sourceforge.net/project/lportal/Liferay%20Portal/${app.liferay.version.name}/${archive.liferay.name}"/>
+
+  <!-- Properties - Files-->
+
+  <property name="files.standalone.xml"
+            value="${app.source.dir}/.openshift/config/standalone.xml"/>
+  <property name="files.modules.dir"
+            value="${app.source.dir}/.openshift/config/modules"/>
+
+  <property name="archive.dependencies.path"
+            value="${basedir}/staging/jboss/${archive.dependencies.name}"/>
+  <property name="archive.liferay.path"
+            value="${basedir}/staging/jboss/${archive.liferay.name}"/>
+
+  <!-- Conditions - Files -->
+
+  <condition property="archive.dependencies.available">
+    <available file="${archive.dependencies.path}"/>
+  </condition>
+
+  <condition property="archive.liferay.available">
+    <available file="${archive.liferay.path}"/>
+  </condition>
 
 
-  <target name="import-maven-properties" unless="${app.openshift.domain}">
-    <echo>Importing properties from pom.xml</echo>
-    <xmlproperty file="pom.xml" keepRoot="false"/>
+  <!-- Downloads - Archives -->
+
+  <target name="download-dependencies" unless="${archive.dependencies.available}">
+    <get src="${archive.dependencies.url}"
+         dest="${archive.dependencies.path}"
+         verbose="false"/>
   </target>
 
+  <target name="download-liferay" unless="${archive.liferay.available}">
+    <get src="${archive.liferay.url}"
+         dest="${archive.liferay.path}"
+         verbose="false"/>
+  </target>
+
+  <target name="download-upstream"
+          depends="download-dependencies, download-liferay"/>
 
 
 
@@ -27,8 +92,7 @@
   </target>
 
 
-  <target name="copy-upstream-modules"
-          depends="import-maven-properties, upstream-dirs">
+  <target name="copy-upstream-modules" depends="upstream-dirs">
     <!-- FIXME: can't provide the domain name by way of substitution? -->
     <scp
         file="${app.openshift.uid}@${app.openshift.domain}:/var/lib/openshift/${app.openshift.uid}/jbossas/modules"
