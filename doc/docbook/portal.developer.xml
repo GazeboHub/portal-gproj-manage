@@ -754,69 +754,93 @@
       <title>&project; Platform Reference Pages</title>
       <refentry xml:id="r.shell.rhc">
        <!-- class: shell command -->
+       <!-- Describe: Installation; usage. -->
+       <!-- Provide links to: Further Documentation -->
       </refentry>
 
       <refentry xml:id="r.svc.oso">
-       <!-- class: service -->
+        <!-- class: service -->
+        <!-- Describe: Architecture -->
+        <!-- Provide links to: Further Documentation -->
       </refentry>
 
       <refentry xml:id="r.svc.osorgin">
-       <!-- class: platform -->
+       <!-- class: platform service -->
+        <!-- Describe: Architecture -->
+        <!-- Provide links to: Further Documentation -->
       </refentry>
 
       <refentry xml:id="r.svc.git">
        <!-- class: shell command -->
+        <!-- Describe: ??? -->
+        <!-- Provide links to: Further Documentation (Pro Git, etc) -->
       </refentry>
 
       <refentry xml:id="r.svc.github">
        <!-- class: service -->
+       <!-- Describe:
+            * Roles in providing public and private Git repositories
+            services
+            * Roles in providing GitHub pages service
+       -->
       </refentry>
 
       <refentry xml:id="r.svc.mvn">
        <!-- class: shell command -->
+       <!-- Describe: Usage in dependency management and project build
+       automation -->
       </refentry>
 
       <refentry xml:id="r.svc.ant">
        <!-- class: shell command -->
+       <!-- Describe: Usage in project build automation;
+            xref to Ivy w.r.t dependency management -->
       </refentry>
 
       <refentry xml:id="r.app.liferay">
        <!-- class: web application -->
+       <!-- Describe: "Everything Liferay" (???). Xref r.c.portal -->
       </refentry>
 
       <refentry xml:id="r.app.jbossas">
        <!-- class: web services provider, enterprise application container -->
+       <!-- Describe: "Everything JBossAS7" (???). Xref r.c.portal -->
       </refentry>
 
       <refentry xml:id="r.app.haproxy">
        <!-- class: proxy/cluster/load balancing services provider -->
+       <!-- Describe: Role in clustering and load balancing onto OSO (?). Xref r.c.portal -->
       </refentry>
 
       <refentry xml:id="r.app.pgsql">
        <!-- class: RDBMS services provider -->
+       <!-- Describe: Role as RDBMS. Xref r.c.portal. Note PostGIS -->
       </refentry>
 
-      <refentry xml:id="r.app.modeshape"/>
+      <refentry xml:id="r.app.modeshape"/> <!-- JCR, WebDAV service provider. Uses Infinispan -->
 
-      <refentry xml:id="r.spec.jcr"/>
+      <refentry xml:id="r.spec.jcr"/> <!-- w.r.t resource-labs -->
 
-      <refentry xml:id="r.lang.java">
+      <refentry xml:id="r.lang.java"> <!-- language and platform -->
        <!-- class: language -->
       </refentry>
 
-      <refentry xml:id="r.lang.ruby">
+      <refentry xml:id="r.lang.ruby"> <!-- language and platform -->
        <!-- class: language -->
       </refentry>
 
-      <refentry xml:id="r.lang.uml"/>
+      <refentry xml:id="r.lang.uml"/> <!-- primary modeling language,
+      also used in modeling MOF -->
 
-      <refentry xml:id="r.lang.mof"/>
+      <refentry xml:id="r.lang.mof"/> <!-- "extensibility harness" for UML -->
 
-      <refentry xml:id="r.lang.rdf"/>
+      <refentry xml:id="r.lang.rdf"/> <!-- Resources are Resources -->
 
-      <refentry xml:id="r.lang.owl"/>
+      <refentry xml:id="r.lang.owl"/> <!-- classes, property type
+      definitions, and individual instance definitions, extending on
+      RDF and adding further inference support (w.r.t SWRL) -->
 
-      <refentry xml:id="r.lang.skos"/>
+      <refentry xml:id="r.lang.skos"/> <!-- concepts are concepts -->
 
       <refentry xml:id="r.conc.tmdm">
         <!-- class: concept -->
