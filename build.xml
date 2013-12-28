@@ -15,7 +15,10 @@
   <xmlproperty file="pom.xml" keeproot="false"/>
 
   <property name="app.source.dir"
-            value="publish/${app.openshift.name}-${app.openshift.namespace}"/>
+            value="${basedir}/publish/${app.openshift.name}-${app.openshift.namespace}"/>
+  <property name="app.modules.dir"
+            value="${app.source.dir}/.openshift/config/modules"/>
+
 
   <!-- Properties - Misc -->
   <property name="app.liferay.version"
@@ -83,7 +86,99 @@
           depends="download-dependencies, download-liferay"/>
 
 
+  <!-- Install - Dependencies -->
 
+  <!-- Overview of Procedure:
+
+       0) depends=download-dependencies
+
+       1) Unzip ${archive.dependencies.path} to
+       ${archive.dependencies.output}
+
+       2) mkdir  ${app.modules.dir}/com/liferay/portal/main
+
+       3) Move contents of {archive.dependencies.output}
+       to ${app.modules.dir}/com/liferay/portal/main
+       4) rmdir ${?}
+
+       5) copy com.liferay.portal.main.module.xml to file
+       ${app.modules.dir}/com/liferay/portal/main/module.xml
+
+       6) git-add ${app.modules.dir}
+       cf. http://wiki.eclipse.org/JGit/User_Guide#git-add
+
+       7) Echo "Please git-commit under ${app.modules.dir}"
+  -->
+
+  <!-- Install - Liferay -->
+
+  <!--Overview of Procedure:
+
+      0) depends=download-liferay
+
+      1) Unzip ${archive.liferay.path} to ${archive.liferay.output}
+
+      2) Remove eclipselink.jar from ${archive.liferay.output}
+
+      3) Add portal-ext-properties to ${archive.liferay.output}
+
+        ensure contents:
+            setup.wizard.enabled=false
+            jdbc.default.jndi.name=java:jdbc/LiferayPool
+            mail.session.jndi.name=java:mail/MailSession
+
+      4) Using WAR task, build ROOT.war out of ${archive.liferay.output}
+      cf.
+      https://ant.apache.org/manual/Tasks/war.html
+      http://en.wikipedia.org/wiki/WAR_file_format_(Sun)
+
+  -->
+
+  <!-- other tasks:
+
+       In reference to
+       http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en
+
+       1) Modify standalone.xml
+       * Ensure properties for Catalina
+       * Defne JAAS domain PortalRealm
+       * Ensure jsp-configuration within default-host in web domain
+       * Define LiferayPool datasource
+       * Define MailSession in mail domain
+
+        SIDEBAR: Emails services from Gandi.net
+        http://wiki.gandi.net/en/mail
+
+       2) Modify upstream/jbossas/modules/sun/jdk/main/module.xml
+
+       3) Create file
+       ${app.source.dir}/.openshift/action_hooks/pre_start
+       then chmod+x that file
+
+        Contents:
+
+       echo "$0 executing pre_start"
+export JAVA_OPTS="-Djava.security.manager -Djava.security.policy=${?????}/server.policy -Xmx1024m -XX:MaxPermSize=256m -verbose:class ${JAVA_OPTS}"
+echo "pre_start JAVA_OPTS: ${JAVA_OPTS}"
+
+
+  -->
+
+  <!--
+      AT INSTALL TIME:
+      1) SCP ROOT.war to OpenShift application
+      2) User should manually "rhc app -n ${app.openshift.namespace} -a ${app.openshift.name} stop"
+      3) User must manually "git commit -m ... && git push"
+      the modified ${app.source.dir}
+      4) User should manually "rhc app -n ${app.openshift.namespace} -a ${app.openshift.name} start"
+      then monitor http://${app.openshift.domain}/
+      and "rhc tail -n ${app.openshift.namespace}
+      ${app.openshift.name}"
+
+        NOTE: After Liferay is initialized, try to synch the remote
+        portal-ext.properties to local - wherever it's created,
+        under the JBoss AS installation on OpenShift
+  -->
 
   <!-- Temporary code -->
 
