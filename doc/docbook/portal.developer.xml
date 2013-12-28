@@ -392,7 +392,92 @@
         </refnamediv>
         <refsect1>
           <title>Description</title>
-          <para></para>
+          <para>
+            The
+            <systemitem class="resource"
+                        >portal-gproj-manage</systemitem>
+            <glossterm>source tree</glossterm> was defined originally
+            for purpose of maintaining a set of
+            <glossterm>resources</glossterm> external to the <xref
+            linkend="r.c.portal"/> <glossterm>source
+            tree</glossterm>. This was for two primary goals:
+          </para>
+          <simplelist>
+            <member>
+              Ensure that those <glossterm>resources</glossterm> may
+              <glossterm>persist</glossterm> across iterations in the
+              development of the <xref linkend="r.c.portal"/>
+              <glossterm>source tree</glossterm>.
+            </member>
+            <member>
+              Ensure that those resources can be maintained for the
+              management of the <xref linkend="r.c.portal"/>
+              <glossterm>source tree</glossterm>, without those
+              resources encroaching on the
+              <glossterm>storage</glossterm>
+              <glossterm>quota</glossterm> of the
+              <xref linkend="r.c.portal"/>
+              <glossterm>application</glossterm>
+            </member>
+          </simplelist>
+        </refsect1>
+        <refsect1>
+          <title>See Also</title>
+          <simplelist>
+            <member><xref linkend="r.c.portal"></member>
+          </simplelist>
+        </refsect1>
+      </refentry>
+
+      <refentry xml:id="r.c.portal">
+        <refnamediv>
+          <refname>
+            <systemitem class="resource"
+                        >portal</systemitem>
+          </refname>
+          <refpurpose>
+            &project; portal application onto
+            <xref linkend="r.svc.oso"/>
+          </refpurpose>
+          <refclass>Source Tree Component</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para>
+            The &project; <systemitem
+            class="resource">portal</systemitem>
+            <glossterm>source tree</glossterm> defines an
+            <glossterm>application</glossterm> onto <xref
+            linkend="r.svc.oso"/>, managed by  &project;
+            administrative staff. The <systemitem
+            class="resource">portal</systemitem>
+            <glossterm>application</glossterm>
+            <glossterm>shall</glossterm> provide the primary dynamic
+            web platform for the &project;.
+          </para>
+          <para>
+            The &project; <systemitem
+            class="resource">portal</systemitem>
+            <glossterm>source tree</glossterm> represents the singular
+            <glossterm>private</glossterm> <glossterm>source
+            tree</glossterm> of the &project;
+            <glossterm>workspace</glossterm>. The
+            <glossterm>private</glossterm> nature of this
+            <glossterm>source tree</glossterm> is ensured for purpose
+            of maintaining, transitively, the privacy of
+            <glossterm>credentials</glossterm> utilized in fundamental
+            <glossterm>platform</glossterm>
+            <glossterm>services</glossterm> accessed by the
+            <systemitem class="resource">portal</systemitem>
+            <glossterm>application</glossterm>
+          </para>
+        </refsect1>
+        <refsect1>
+          <title>See Also</title>
+          <simplelist>
+            <member><xref linkend="r.c.portal-gproj-manage"/></member>
+            <member><xref linkend="r.net.com.rhcloud.portal-gproj"/></member>
+          </simplelist>
         </refsect1>
       </refentry>
 
@@ -411,7 +496,27 @@
         </refnamediv>
         <refsect1>
           <title>Description</title>
-          <para></para>
+          <para>
+            The <systemitem class="resource">gproj-ghub-site-manage</systemitem>
+            <glossterm>source tree</glossterm> provides a
+            <glossterm>baseline</glossterm> for managing the
+            development of the <glossterm>web content</glossterm>
+            published of the <xref linkend="r.net.io.github.gazebohub"/>
+            <glossterm>web site</glossterm>
+          </para>
+        </refsect1>
+        <refsect1>
+          <title>See Also</title>
+          <simplelist>
+            <member>
+              <!-- network host and "web site" service onto GitHub Pages -->
+              <xref linkend="r.net.io.github.gazebohub"/>
+            </member>
+            <member>
+              <!-- source tree published as <xref linkend="r.net.io.github.gazebohub"/> -->
+              <xref linkend="r.c.gazebohub.github.io"/>
+            </member>
+          </simplelist>
         </refsect1>
       </refentry>
 
