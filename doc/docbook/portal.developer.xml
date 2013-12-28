@@ -126,9 +126,11 @@
   <part xml:id="&projid;.devel.exec">
     <title>&project; Administrativa</title>
 
-      <chapter xml:id="&projid;.devel.admin.avail">
-        <title>Availability</title>
-        <simplesect>
+      <chapter xml:id="&projid;.devel.admin.www">
+        <title>&gproj; Fundamental Web Resources</title>
+        
+        <simplesect xml:id="r.net.io.github.gazebohub".>
+        <!-- Work Product Definition: gazebohub.github.io -->
           <title>&gproj; Static Content Site</title>
 
           <remark>
@@ -142,10 +144,11 @@
           Site" pages for components of the &gproj; Web Workspace</remark>
         </simplesect>
 
-        <simplesect>
+        <simplesect xml:id="r.net.com.rhcloud.portal-gproj">
           <title>&gproj; Dynamic Content Site</title>
+          <!-- Work Product Definition: portal-gproj.rhcloud.com -->
           <remark>
-            namely <link xlink:href="http://portal-gproj.rhcloud.com/"
+            Availability: <link xlink:href="http://portal-gproj.rhcloud.com/"
             >portal-gproj.rhcloud.com</link>
           </remark>
 
@@ -168,22 +171,30 @@
               <row>
                 <entry>Milestone</entry>
                 <entry>Pseudonym</entry>
+                <entry>Status</entry>
                 <entry>Goals</entry>
+                <entry>Components</entry>
               </row>
             </thead>
             <tbody>
-              <row>
+              <row xml:id="r.plan.m1">
                 <entry><systemitem class="resource">M1</systemitem></entry>
                 <entry><foreignphrase>Montgolfier</foreignphrase></entry>
+                <entry>In Progress</entry>
                 <entry>Initial installation of <xref
                 linkend="r.app.liferay"/> portal onto
                 <xref linkend="r.app.jbossas"/>
                 <glossterm>cartridge</glossterm> hosted on
                 <xref linkend="r.svc.oso"/></entry>
+                <entry><simplelist>
+                	<member>portal</member>
+                	<member>portal-gproj-manage</member>
+                	</simplelist></entry>
               </row>
-              <row>
+              <row xml:id="r.plan.m2">
                 <entry><systemitem class="resource">M2</systemitem></entry>
                 <entry><foreignphrase>Gondola</foreignphrase></entry>
+                <entry>Planning</entry>
                 <entry>Development of "Minecraft like" theme for
                 portal site; Integration of <xref
                 linkend="r.app.modeshape"/> Hook for
@@ -192,13 +203,16 @@
                 special-purpose content types, in the development of
                 an abstract filesystem and cross-platform portal
                 workflow</entry>
+                <entry>TBD</entry>
               </row>
-              <row>
+              <row xml:id="r.plan.mTBD"> 
                 <entry><acronym>TBD</acronym></entry>
                 <entry><acronym>TBD</acronym></entry>
+                <entry>Planning</entry>
                 <entry>Development of individual knowledge models and
                 knowledge presentation frameworks. See <xref
                 linkend="&projid;.devel.p.km"/></entry>
+                <entry>gproj-km</entry>
               </row>
           </tgroup>
         </table>
@@ -206,6 +220,11 @@
 
   </part> <!-- Administrativa -->
 
+  <part xml:id="&projid;.devel.c">
+    <title>&project; Components Reference</title>
+    
+  </part> <!-- Components Reference -->
+  
   <part xml:id="&projid;.devel.p">
     <title>&project; Platform Reference</title>
     <!-- To Do: Divide into individual sections (provide an index for each)
@@ -268,7 +287,7 @@
       . HTML5
       . WebGL
       . Blender
-      . Loki Render (remderfarm milestone)
+      . Loki Render (renderfarm milestone)
       . SPICE (astrometry milestone)
 
 
