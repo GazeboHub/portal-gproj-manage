@@ -130,12 +130,16 @@
         <title>Availability</title>
         <simplesect>
           <title>&gproj; Static Content Site</title>
-          <remark>
-            namely <link xlink:href="http://gazebohub.github.io/"
-            >gazebohub.github.io</link>
 
-            <remark>OWL ontologies; Maven artifacts</remark>
+          <remark>
+            Availability: <link xlink:href="http://gazebohub.github.io/"
+            >gazebohub.github.io</link>
           </remark>
+
+          <remark>Development: gh-pages branch....?</remark>
+
+          <remark>Content: OWL ontologies; Maven artifacts; "Maven
+          Site" pages for components of the &gproj; Web Workspace</remark>
         </simplesect>
 
         <simplesect>
@@ -145,20 +149,12 @@
             >portal-gproj.rhcloud.com</link>
           </remark>
 
-          <remark>Knowledge models; discursive content</remark>
+          <remark>Development: GProj Web Workspace, specifically
+          portal-gproj-manage</remark>
+
+          <remark>Content: Knowledge models; discursive content</remark>
         </simplesect>
 
-
-         <simplesect>
-          <title>&gproj; Web Workspace</titele>
-          <remark>
-            namely <link xlink:href="https://github.com/GazeboHub/gproj-web-workspace"
-            ><systemitem
-            class="resource">gproj-web-workspace</systemitem>
-            at &github;</link>
-          </remark>
-
-        </simplesect>
       </chapter> <!-- availability -->
 
 
@@ -172,27 +168,37 @@
               <row>
                 <entry>Milestone</entry>
                 <entry>Pseudonym</entry>
-                <entry>Summary</entry>
+                <entry>Goals</entry>
               </row>
             </thead>
             <tbody>
               <row>
-                <entry>M1</entry>
-                <entry>"Montgolfier"</entry>
-                <entry>Initial installation of Liferay portal onto
-                JBoss AS7 cartridge hosted on OpenShift</entry>
+                <entry><systemitem class="resource">M1</systemitem></entry>
+                <entry><foreignphrase>Montgolfier</foreignphrase></entry>
+                <entry>Initial installation of <xref
+                linkend="r.app.liferay"/> portal onto
+                <xref linkend="r.app.jbossas"/>
+                <glossterm>cartridge</glossterm> hosted on
+                <xref linkend="r.svc.oso"/></entry>
               </row>
               <row>
-                <entry>M2</entry>
-                <entry>"Gondola"</entry>
+                <entry><systemitem class="resource">M2</systemitem></entry>
+                <entry><foreignphrase>Gondola</foreignphrase></entry>
                 <entry>Development of "Minecraft like" theme for
-                portal site</entry>
+                portal site; Integration of <xref
+                linkend="r.app.modeshape"/> Hook for
+                <xref linkend="r.app.liferay"/>; extension of <xref
+                linkend="r.spec.jcr"/> for representation of
+                special-purpose content types, in the development of
+                an abstract filesystem and cross-platform portal
+                workflow</entry>
               </row>
               <row>
-                <entry>TBD</entry>
-                <entry>TBD</entry>
+                <entry><acronym>TBD</acronym></entry>
+                <entry><acronym>TBD</acronym></entry>
                 <entry>Development of individual knowledge models and
-                presentational frameworks</entry>
+                knowledge presentation frameworks. See <xref
+                linkend="&projid;.devel.p.km"/></entry>
               </row>
           </tgroup>
         </table>
@@ -304,14 +310,30 @@
         <title>Structure of this Reference</title>
         <para>
           This reference section within the <xref
-          linkend="&projid;.devel"/> shall be developed in a manner
-          similar to an XML Topic Map
-
-        </para>
+          linkend="&projid;.devel"/>
+          <glossterm>shall</glossterm> be developed in a manner
+          similar to an XML Topic Map.<footnote>
+          <para>See also: <xref linkend="r.conc.tmdm"/></para>
+        </footnote></para>
       </simplesect>
     </preface>
 
-    <reference xml:id="">
+    <chapter xml:id="&projid;.devel.p.km">
+      <title>Knowledge Modeling and Knowledge Resource
+      Management</title>
+      <simplesect>
+        <title>Topical Index</title>
+        <simplelist>
+          <member><xref linkend="r.lang.rdf"/></member>
+          <member><xref linkend="r.lang.owl"/></member>
+          <member><xref linkend="r.lang.skos"/></member>
+          <member><xref linkend="r.conc.tmdm"/></member>
+          <member><xref linkend="r.lang.odm"/></member>
+        </simplelist>
+      </simplesect>
+    </chapter>
+
+    <reference xml:id="&projid;.devel.p.ref">
       <title>&project; Platform Reference Pages</title>
       <refentry xml:id="r.shell.rhc">
        <!-- class: shell command -->
@@ -356,6 +378,10 @@
       <refentry xml:id="r.app.pgsql">
        <!-- class: RDBMS services provider -->
       </refentry>
+
+      <refentry xml:id="r.app.modeshape"/>
+
+      <refentry xml:id="r.spec.jcr"/>
 
       <refentry xml:id="r.lang.java">
        <!-- class: language -->
