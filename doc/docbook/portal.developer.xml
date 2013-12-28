@@ -153,7 +153,305 @@
         </table>
       </chapter>  <!-- Project Planning -->
 
+  </part> <!-- Administrativa -->
+
+  <part xml:id="&projid;.devel.p">
+    <title>&project; Platform Reference</title>
+    <!-- To Do: Divide into individual sections (provide an index for each)
+
+    . &project; Developer Workflow Components
+      . git
+      . ghgit (i.e github git repository service, distinct ref)
+      . mvn
+      . ant
+      . docbook
+      . saxon
+      . rhc (dual ref)
+
+    . &project; Web Platform Components
+      . liferay
+      . jbossas
+      . pgsql
+      . haproxy (dual ref)
+      . oso (dual ref)
+      . ghpages (i.e. github pages, distinct ref)
+
+    . OpenShift
+      . oso
+      . osorgin
+      . rhc
+      . haproxy
+
+    . &project; Network Host Components
+      . Gandi.net DNS
+      . haproxy (multiple ref)
+
+    . Languages
+      . Ruby
+      . Java
+      . UML
+      . XML
+
+    . "Future Platform Milestone Components" ("What is a future platform?")
+      . Kerberos
+      . SSO (i.e single sign-on - abstract concept - "network host" and "web" platform tiers. Kerberos on both)
+      . CORBA
+      . JacORB
+      . LDAP
+      . OpenLDAP
+      . WebDAV
+      . JCR
+      . ModeShape
+      . GWT
+      . AJAX
+      . Vaadin
+      . RDF
+      . OWL
+      . Jena
+      . ODM
+      . SPARQL
+      . GeoSPARQL
+      . JAMWiki
+      . AMOF2
+      . Fritzing (Arduino / Hobbyist electrical engineering milestone)
+      . HTML5
+      . WebGL
+      . Blender
+      . Loki Render (remderfarm milestone)
+      . SPICE (astrometry milestone)
+
+
+    . iOS Mobile Platform
+      . iThoughts
+      . Goodreader
+      . Textastic
+      . Superfiles
+      . UXWrite
+      . QuickOffice
+      . OmniFocus
+      . OmniGraffle
+      . Cubetto Mobile
+      . Kindle app
+      . Electronic Toolbox (Arduino / Hobbyist electrical engineering milestone)
+      . Charity Miles
+      . Strava Cycling
+      . Fitness Buddy
+      . Gray's Anatomy
+      . Trimble apps
+      . Epicurious
+      . AllRecipes
+      . Kitchen Guru
+      . DailyBurn Tracker
+      . FoodScanner
+      . UrbanSpoon
+      . VegetableInfo
+
+    . Server Farm Branch
+      . OSOrigin (dual ref)
+      . Virtualbox
+      . Loki Render
+      . ??? PuppetLabs Razor (what services does it provide? what manner of integration with existing tools and platforms?)
+    -->
+    <preface xml:id="&projid;.devel.p.overview">
+      <title>Overview</title>
+
+      <simplesect>
+        <title>Structure of this Reference</title>
+        <para>
+          This reference section within the <xref
+          linkend="&projid;.devel"/> shall be developed in a manner
+          similar to an XML Topic Map
+
+        </para>
+      </simplesect>
+    </preface>
+
+    <reference xml:id="">
+      <title>&project; Platform Reference Pages</title>
+      <refentry xml:id="r.shell.rhc">
+       <!-- class: shell command -->
+      </refentry>
+
+      <refentry xml:id="r.svc.oso">
+       <!-- class: service -->
+      </refentry>
+
+      <refentry xml:id="r.svc.osorgin">
+       <!-- class: platform -->
+      </refentry>
+
+      <refentry xml:id="r.svc.git">
+       <!-- class: shell command -->
+      </refentry>
+
+      <refentry xml:id="r.svc.github">
+       <!-- class: service -->
+      </refentry>
+
+      <refentry xml:id="r.svc.mvn">
+       <!-- class: shell command -->
+      </refentry>
+
+      <refentry xml:id="r.svc.ant">
+       <!-- class: shell command -->
+      </refentry>
+
+      <refentry xml:id="r.app.liferay">
+       <!-- class: web application -->
+      </refentry>
+
+      <refentry xml:id="r.app.jbossas">
+       <!-- class: web services provider, enterprise application container -->
+      </refentry>
+
+      <refentry xml:id="r.app.haproxy">
+       <!-- class: proxy/cluster/load balancing services provider -->
+      </refentry>
+
+      <refentry xml:id="r.app.pgsql">
+       <!-- class: RDBMS services provider -->
+      </refentry>
+
+      <refentry xml:id="r.lang.java">
+       <!-- class: language -->
+      </refentry>
+
+      <refentry xml:id="r.lang.ruby">
+       <!-- class: language -->
+      </refentry>
+
+      <refentry xml:id="r.lang.uml"/>
+
+      <refentry xml:id="r.lang.mof"/>
+
+      <refentry xml:id="r.lang.rdf"/>
+
+      <refentry xml:id="r.lang.owl"/>
+
+      <refentry xml:id="r.lang.skos"/>
+
+      <refentry xml:id="r.conc.tmdm">
+        <!-- class: concept -->
+        <refnamediv>
+          <refname>Topic Map Data Model</refname>
+          <refname><acronym>TMDM</acronym></refname>
+          <refpurpose>Abstract Model for Topical Concepts
+          and Topical Associations</refpurpose>
+          <refclass>Concept</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para>
+            The <glossterm>Topic Map Data Model</glossterm>
+            (<acronym>TMDM</acronym>) forms a core feature of the
+            <glossterm>Topic Maps</glossterm> specification as defined
+            in <systemitem class="resource">ISO/IEC 13250</systemitem>.
+          </para>
+        </refsect1>
+        <refsect1>
+          <title>See Also</title>
+          <simplelist>
+            <member><xref linkend="r.lang.odm"/></member>
+            <member><xref linkend="r.lang.skos"/></member>
+          </simplelist>
+        </refsect1>
+        <refsect1>
+          <title>External References</title>
+          <simplelist>
+            <member><link xlink:href="http://www.topicmaps.org/"
+                          >TopicMaps.org</link></member>
+            <member><link xlink:href="http://www.isotopicmaps.org/"
+                        >ISO/IEC SC 34/WG 3</link></member>
+            <member><link xlink:href="http://www.ontopia.net/"
+                          >Ontopia</link></member>
+            <member><link xlink:href="http://tm4j.org/"
+                          >TM4J - Topic Maps for Java</link></member>
+          </simplelist>
+        </refsect1>
+      </refentry>
+
+      <refentry xml:id="r.lang.odm">
+        <refnamediv>
+          <refname>Ontology Definition Metamodel</refname>
+          <refpurpose><acronym>ODM</acronym></refpurpose>
+          <refclass>Metamodel</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para>
+            <acronym>ODM</acronym> defines
+            <glossterm>metamodels</glossterm> such as may be applied
+            for represention and transformation of elements in a broad
+            range of conventional <glossterm>knowledge
+            representation</glossterm> languages, within compliant
+            <glossterm>UML</glossterm> modeling tools.
+            <acronym>ODM</acronym> defines
+            <glossterm>metamodels</glossterm> for the following languages:
+          </para>
+
+          <simplelist>
+            <member><acronym>RDF</acronym></member>
+            <member><acronym>OWL</acronym></member>
+            <member><acronym>Topic Maps</acronym></member>
+            <member><acronym>Common Logic</acronym></member>
+          </simplelist>
+
+        </refsect1>
+
+        <refsect1>
+          <title>See Also</title>
+          <simplelist>
+            <member><xref linkend="r.lang.tmdm"/></member>
+            <member><xref linkend="r.lang.rdf"/></member>
+            <member><xref linkend="r.lang.owl"/></member>
+            <member><xref linkend="r.lang.uml"/></member>
+            <member><xref linkend="r.lang.mof"/></member>
+          </simplelist>
+        </refsect1>
+        <refsect1>
+          <title>External References</title>
+          <simplelist>
+            <member>
+              <link xlink:href="http://www.omg.org/spec/ODM/1.0/"
+                    >ODM 1.0</link>,
+              <orgname>Object Management Group</orgname>
+            </member>
+            <member>
+              <link xlink:href="http://cl.tamu.edu/"
+                          >Common Logic Working Group Documents</link>,
+              <orgname>Texas A&amp;M University</orgname>
+            </member>
+          </simplelist>
+        </refsect1>
+      </refentry>
+
+
+<!-- template (generic)
+
+      <refentry xml:id="r.X.Y">
+        <refnamediv>
+          <refname>Y</refname>
+          <refpurpose></refpurpose>
+          <refclass>X</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para></para>
+        </refsect1>
+        <refsect1>
+          <title>See Also</title>
+          <simplelist>
+            <member></member>
+          </simplelist>
+        </refsect1>
+        <refsect1>
+          <title>External References</title>
+          <simplelist>
+            <member></member>
+          </simplelist>
+        </refsect1>
+      </refentry>
+-->
+    </reference>
   </part>
-
-
 </book>
