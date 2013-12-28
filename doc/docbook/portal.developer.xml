@@ -1,0 +1,159 @@
+<!DOCTYPE book [
+<!ENTITY % project.ent SYSTEM "project.ent">
+%project.ent;
+]>
+<book xmlns="http://docbook.org/ns/docbook"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xml:id="&projid;.devel"
+     version="ghbook-1.0"
+     >
+  <title>&project; Developer Documentation</title>
+
+
+  <preface xml:id="&projid;.devel.overview">
+    <title>Overview</title>
+    <para>The Gazebo Project is a meta-project composed of a set of
+    knowledge management projects and related work areas. The primary
+    focus of the Gazebo Project is to develop a set of components and
+    toolchains for tasks in knowledge management, in support of
+    knowledge resource utilization and knowledge resource development,
+    as centered around social concerns including:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>
+          Natural resource conservation.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Recreational activity, with regards to national and
+          continental geological and ecological heritage in the US and
+          broader North America.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Democratic access to information published for the collective
+          audience of "We," the citizen stakeholders, published actively
+          by US federal, state, county, and municipal governmental
+          agencies.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          History of the arts, centering around modes of the modern arts.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Sports and recreation, in traditional modes reified of the
+          international Olympics and in unconventional, "Extreme
+          Sports" modes defined by commercial agencies including Red
+          Bull GmbH and the Monster beverage company.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The emerging NewSpace industry and the heritage of science
+          and goodwill as codified in modes of traditional,
+          institutional programs in aerospace systems development and
+          space exploration.
+        </para>
+      </listitem>
+      <listitem>
+        <para>International humanitarian programs, such as managed by
+        the UN and the ICRC</para>
+      </listitem>
+    </itemizedlist>
+
+ xml:id="&projid;.devel.admin.avail">    <para>
+      The Gazebo Project shall serve as a content repository and
+      content presentation portal for public web content developed
+      around those topics, so far as the content may extend on any
+      single, discrete knowledge model developed within the Gazebo
+      Project.
+    </para>
+
+  </preface>
+
+  <part xml:id="&projid;.devel.exec">
+    <title>&project; Administrativa</title>
+
+      <chapter xml:id="&projid;.devel.admin.avail">
+        <title>Availability</title>
+        <simplesect>
+          <title>Gazebo Project Static Content Site</title>
+          <remark>
+            namely <link xlink:href="http://gazebohub.github.io/"
+            >gazebohub.github.io</link>
+
+            <remark>OWL ontologies; Maven artifacts</remark>
+          </remark>
+        </simplesect>
+
+        <simplesect>
+          <title>Gazebo Project Dynamic Content Site</title>
+          <remark>
+            namely <link xlink:href="http://portal-gproj.rhcloud.com/"
+            >portal-gproj.rhcloud.com</link>
+          </remark>
+
+          <remark>Knowledge models; discursive content</remark>
+        </simplesect>
+
+
+         <simplesect>
+          <title>Gazebo Project Web Workspace</titele>
+          <remark>
+            namely <link xlink:href="https://github.com/GazeboHub/gproj-web-workspace"
+            ><systemitem
+            class="resource">gproj-web-workspace</systemitem>
+            at &github;</link>
+          </remark>
+
+        </simplesect>
+      </chapter> <!-- availability -->
+
+
+      <chapter xml:id="&projid;.devel.exec.plan">
+        <title>Project Planning</title>
+
+        <table>
+          <title>&project; Project Roadmap</title>
+          <tgroup cols="3">
+            <thead>
+              <row>
+                <entry>Milestone</entry>
+                <entry>Pseudonym</entry>
+                <entry>Summary</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>M1</entry>
+                <entry>"Montgolfier"</entry>
+                <entry>Initial installation of Liferay portal onto
+                JBoss AS7 cartridge hosted on OpenShift</entry>
+              </row>
+              <row>
+                <entry>M2</entry>
+                <entry>"Gondola"</entry>
+                <entry>Development of "Minecraft like" theme for
+                portal site</entry>
+              </row>
+              <row>
+                <entry>TBD</entry>
+                <entry>TBD</entry>
+                <entry>Development of individual knowledge models and
+                presentational frameworks</entry>
+              </row>
+          </tgroup>
+        </table>
+      </chapter>  <!-- Project Planning -->
+
+  </part>
+
+
+</book>

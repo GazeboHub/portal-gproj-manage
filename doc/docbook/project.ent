@@ -1,0 +1,14 @@
+<!ENTITY project
+         'Gazebo Portal'
+>
+
+<!ENTITY projid
+        'portal'
+>
+
+
+<!-- -->
+
+<!ENTITY github
+        "<productname>GitHub</productname>"
+>

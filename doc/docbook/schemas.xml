@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE locatingRules [
+
+<!ENTITY workspace "../../../..">
+<!ENTITY ghubDoc "&workspace;/project/ghub-doc">
+
+<!-- NOTE: relative paths will be resolved as relative to the path of
+the containing file -->
+<!ENTITY docBook "&ghubDoc;/src/main/rnc/ghbook.rnc">
+
+
+]>
+<locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
+
+<!-- DocBook 5 (Customized) -->
+ <namespace ns="http://docbook.org/ns/docbook" uri="&docBook;"/>
+
+ <documentElement localName="set" uri="&docBook;"/>
+ <documentElement localName="book" uri="&docBook;"/>
+ <documentElement localName="part" uri="&docBook;"/>
+ <documentElement localName="chapter" uri="&docBook;"/>
+ <documentElement localName="section" uri="&docBook;"/>
+ <documentElement localName="article" uri="&docBook;"/>
+ <documentElement localName="glossary" uri="&docBook;"/>
+ <documentElement localName="bibliography" uri="&docBook;"/>
+ <documentElement localName="appendix" uri="&docBook;"/>
+ <documentElement localName="reference" uri="&docBook;"/>
+ <documentElement localName="refentry" uri="&docBook;"/>
+
+</locatingRules>
