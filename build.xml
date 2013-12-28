@@ -150,6 +150,11 @@
        * Define LiferayPool datasource
        * Define MailSession in mail domain
 
+        SIDEBAR: GPORTAL SECURITY POLICY FOR EMAIL
+        * Determine how the MailSesson config is used in Liferay
+        * Document that in the security policy section of the GPortal
+        manual
+
         SIDEBAR: Email services from Gandi.net
         http://wiki.gandi.net/en/mail
 
