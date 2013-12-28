@@ -97,17 +97,18 @@
 
        2) mkdir  ${app.modules.dir}/com/liferay/portal/main
 
-       3) Move contents of {archive.dependencies.output}
+       3) Move contents of ${archive.dependencies.output}
        to ${app.modules.dir}/com/liferay/portal/main
-       4) rmdir ${?}
+
+       4) rmdir ${archive.dependencies.output}
+
+        - TO DO: Create com.liferay.portal.main.module.xml
+        as per http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en
 
        5) copy com.liferay.portal.main.module.xml to file
        ${app.modules.dir}/com/liferay/portal/main/module.xml
 
-       6) git-add ${app.modules.dir}
-       cf. http://wiki.eclipse.org/JGit/User_Guide#git-add
-
-       7) Echo "Please git-commit under ${app.modules.dir}"
+       6) Echo "Please git-add and git-commit under ${app.modules.dir}"
   -->
 
   <!-- Install - Liferay -->
@@ -126,6 +127,9 @@
             setup.wizard.enabled=false
             jdbc.default.jndi.name=java:jdbc/LiferayPool
             mail.session.jndi.name=java:mail/MailSession
+            admin.email.from.name=????
+            admin.email.from.address=????
+            liferay.home=????
 
       4) Using WAR task, build ROOT.war out of ${archive.liferay.output}
       cf.
@@ -146,7 +150,7 @@
        * Define LiferayPool datasource
        * Define MailSession in mail domain
 
-        SIDEBAR: Emails services from Gandi.net
+        SIDEBAR: Email services from Gandi.net
         http://wiki.gandi.net/en/mail
 
        2) Modify upstream/jbossas/modules/sun/jdk/main/module.xml
@@ -168,8 +172,7 @@ echo "pre_start JAVA_OPTS: ${JAVA_OPTS}"
       AT INSTALL TIME:
       1) SCP ROOT.war to OpenShift application
       2) User should manually "rhc app -n ${app.openshift.namespace} -a ${app.openshift.name} stop"
-      3) User must manually "git commit -m ... && git push"
-      the modified ${app.source.dir}
+      3) User must manually "git commit -m ... && git push" under the modified ${app.source.dir}
       4) User should manually "rhc app -n ${app.openshift.namespace} -a ${app.openshift.name} start"
       then monitor http://${app.openshift.domain}/
       and "rhc tail -n ${app.openshift.namespace}
@@ -177,7 +180,10 @@ echo "pre_start JAVA_OPTS: ${JAVA_OPTS}"
 
         NOTE: After Liferay is initialized, try to synch the remote
         portal-ext.properties to local - wherever it's created,
-        under the JBoss AS installation on OpenShift
+        under the JBoss AS installation on OpenShift.
+
+        NOTE: Not sure how the portal-ext.properties liferay.home will
+        be handled, in this configuration
   -->
 
   <!-- Temporary code -->
