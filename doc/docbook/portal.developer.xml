@@ -128,39 +128,19 @@
     <title>&project; Administrativa</title>
 
       <chapter xml:id="&projid;.devel.admin.www">
-        <title>&gproj; Fundamental Web Resources</title>
+        <title>&gproj; Web Resources</title>
 
-        <simplesect xml:id="r.net.io.github.gazebohub".>
-        <!-- Work Product Definition: gazebohub.github.io -->
-          <title>&gproj; Static Content Site</title>
-
-          <remark>
-            Availability: <link xlink:href="http://gazebohub.github.io/"
-            >gazebohub.github.io</link>
-          </remark>
-
-          <remark>Development: gh-pages branch....?</remark>
-
-          <remark>Content: OWL ontologies; Maven artifacts; "Maven
-          Site" pages for components of the &gproj; Web Workspace</remark>
-        </simplesect>
-
-        <simplesect xml:id="r.net.com.rhcloud.portal-gproj">
-          <title>&gproj; Dynamic Content Site</title>
-          <!-- Work Product Definition: portal-gproj.rhcloud.com -->
-          <remark>
-            Availability: <link xlink:href="http://portal-gproj.rhcloud.com/"
-            >portal-gproj.rhcloud.com</link>
-          </remark>
-
-          <remark>Development: GProj Web Workspace, specifically
-          portal-gproj-manage</remark>
-
-          <remark>Content: Knowledge models; discursive content</remark>
-        </simplesect>
-
-      </chapter> <!-- availability -->
-
+        <formalpara>
+          <title>Availability</title>
+          <para>
+            Refer to:
+            <simplelist>
+              <member><xref linkend="r.net.com.rhcloud.portal-gproj"/></member>
+              <member><xref linkend="r.net.io.github.gazebohub"/></member>
+            </simplelist>
+          </para>
+        </formalpara>
+      </chapter>
 
       <chapter xml:id="&projid;.devel.exec.plan">
         <title>Project Planning</title>
@@ -500,10 +480,22 @@
             The <systemitem class="resource">gproj-ghub-site-manage</systemitem>
             <glossterm>source tree</glossterm> provides a
             <glossterm>baseline</glossterm> for managing the
-            development of the <glossterm>web content</glossterm>
+            development of static <glossterm>web content</glossterm>
             published of the <xref linkend="r.net.io.github.gazebohub"/>
-            <glossterm>web site</glossterm>
+            <glossterm>web site</glossterm>. Those resources
+            <glossterm>shall</glossterm> include:
           </para>
+          <simplelist>
+            <member>
+              <xref linkend="r.lang.owl"/> <glossterm>ontologies</glossterm>
+            </member>
+            <member>
+              <xref linkend="r.c.mvn"/> <glossterm>artifacts</glossterm>
+            </member>
+            <member>
+              <xref linkend="r.c.mvn"/> "Maven Site" pages
+            </member>
+          </simplelist>
         </refsect1>
         <refsect1>
           <title>See Also</title>
@@ -619,7 +611,6 @@
         </refsect1>
       </refentry>
     </reference>
-
 
   </part> <!-- Components Reference -->
 
@@ -964,6 +955,66 @@
         </refsect1>
       </refentry>
 -->
+    </reference> <!-- Reference Pages -->
+  </part>  <!-- Platform Refence -->
+
+  <part xml:id="&projid;.devel.adm">
+    <title>&project; Admnistrative Reference</title>
+
+    <reference>
+      <title>&project; Admnistrative Reference Pages</title>
+
+      <refentry xml:id="r.net.com.rhcloud.portal-gproj">
+        <refnamediv>
+          <refname>
+            <systemitem class="fqdomainname"
+                        >portal-gproj.rhcloud.com</systemitem>
+          </refname>
+          <refpurpose>&project; Dynamic Content Web Host</refpurpose>
+          <refclass>Network Host</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <formalpara>
+            <title>Availability</title>
+            <para><link xlink:href="http://portal-gproj.rhcloud.com/"
+                        >portal-gproj.rhcloud.com</link></para>
+          </formalpara>
+
+          <formalpara>
+            <title>Development</title>
+            <para>Refer to <xref linkend="r.c.portal-gproj-manage"/></para>
+          </formalpara>
+
+        </refsect1>
+      </refentry>
+
+      <refentry xml:id="r.net.io.github.gazebohub">
+        <refnamediv>
+          <refname>
+            <systemitem class="fqdomainname"
+                        >gazebohub.github.io</systemitem>
+          </refname>
+          <refpurpose>&project; Static Content Web Host</refpurpose>
+          <refclass>Network Host</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <formalpara>
+            <title>Availability</title>
+            <para><link xlink:href="http://gazebohub.github.io/"
+                        >gazebohub.github.io</link></para>
+          </formalpara>
+
+          <formalpara>
+            <title>Development</title>
+            <para>Refer to <xref linkend="r.c.gproj-ghub-site-manage"/></para>
+          </formalpara>
+
+        </refsect1>
+      </refentry>
+
     </reference>
   </part>
+
 </book>
