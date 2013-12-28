@@ -13,12 +13,18 @@
 
   <preface xml:id="&projid;.devel.overview">
     <title>Overview</title>
-    <para>The Gazebo Project is a meta-project composed of a set of
-    knowledge management projects and related work areas. The primary
-    focus of the Gazebo Project is to develop a set of components and
-    toolchains for tasks in knowledge management, in support of
-    knowledge resource utilization and knowledge resource development,
-    as centered around social concerns including:</para>
+    <para>
+      The &gproj; is a <emphasis>meta-project</emphasis> composed
+      of a set of <glossterm>knowledge management</glossterm>
+      <glossterm>projects</glossterm> and related <glossterm>work
+      areas</glossterm>. The primary focus of the &gproj; is to develop
+      a set of <glossterm>components</glossterm> and
+      <glossterm>toolchains</glossterm> for <glossterm>tasks</glossterm>
+      in <glossterm>knowledge management</glossterm>, in support of
+      <glossterm>knowledge resource</glossterm> utilization and
+      <glossterm>knowledge resource</glossterm> development,
+      as centered around social concerns including:
+    </para>
 
     <itemizedlist>
       <listitem>
@@ -28,52 +34,91 @@
       </listitem>
       <listitem>
         <para>
-          Recreational activity, with regards to national and
-          continental geological and ecological heritage in the US and
-          broader North America.
+          Outdoor recreational activity, with regards to resources of
+          national and continental geological and ecological heritage
+          in the US and broader North America.
         </para>
       </listitem>
       <listitem>
         <para>
-          Democratic access to information published for the collective
-          audience of "We," the citizen stakeholders, published actively
-          by US federal, state, county, and municipal governmental
-          agencies.
+          Democratic access to <glossterm>information</glossterm>
+          as published for the information of the collective audience
+          of "We," the <glossterm>citizen</glossterm>
+          <glossterm>stakeholders</glossterm>, published actively and
+          in normative means by US <glossterm>federal</glossterm>,
+          <glossterm>state</glossterm>, <glossterm>county</glossterm>,
+          and <glossterm>municipal</glossterm>
+          <glossterm>government</glossterm> agencies. This concern
+          entails a development of resources in a spirit of
+          <emphasis>public informedness</emphasis>, with a politically
+          <glossterm>nonpartisan</glossterm> focus, as
+          with regards to enabling of pragmatic, democratic access
+          to <glossterm>public</glossterm>
+          <glossterm>information</glossterm> published by agencies of
+          <glossterm>government</glossterm>. This concept is inspired
+          originally of Chile's own <orgname>Poderopedia</orgname>,
+          but is affected towards emphasis not of concepts and myths
+          of "Commercial empire" and "Commerical power", but rather,
+          towards concepts of plain, practical, moreover
+          <glossterm>legal</glossterm> public information access, in a
+          democratic society.
         </para>
       </listitem>
       <listitem>
         <para>
-          History of the arts, centering around modes of the modern arts.
+          History of the <glossterm>arts</glossterm>, centering around
+          modes of the <glossterm>modern arts</glossterm>, beginning
+          with the <glossterm>art movement</glossterm>,
+          <glossterm>Dadaism</glossterm>, and relatedly,
+          <glossterm>surrealism</glossterm> &mdash; towards the
+          origins of <glossterm>modern art</glossterm> as an
+          <glossterm>expressive mode</glossterm>
         </para>
       </listitem>
       <listitem>
         <para>
-          Sports and recreation, in traditional modes reified of the
-          international Olympics and in unconventional, "Extreme
-          Sports" modes defined by commercial agencies including Red
-          Bull GmbH and the Monster beverage company.
+          <glossterm>Sports</glossterm> and physically active modes of
+          <glossterm>recreation</glossterm>, as in regards to
+          traditional modes  of <glossterm>sports</glossterm>
+          <glossterm>reified</glossterm> of the
+          <orgname>International Olympic Committee</orgname> and in
+          regards to unconventional <glossterm>sports</glossterm>,
+          typicaly referred to as "Extreme Sports", in modes
+          represented and organized in public endeavors sponsored by
+          commercial agencies including <orgname>Red Bull
+          GmbH</orgname> and the <orgname>Monster
+          beverage company</orgname>.
         </para>
       </listitem>
       <listitem>
         <para>
-          The emerging NewSpace industry and the heritage of science
-          and goodwill as codified in modes of traditional,
-          institutional programs in aerospace systems development and
-          space exploration.
+          The emerging <glossterm>NewSpace</glossterm> industry and
+          the heritage of science and goodwill as codified in modes of
+          traditional, institutional programs in development of
+          <glossterm>civil</glossterm>  <glossterm>aerospace</glossterm>
+          <glossterm>systems</glossterm>  and in
+          <glossterm>space exploration</glossterm>.
         </para>
       </listitem>
       <listitem>
-        <para>International humanitarian programs, such as managed by
-        the UN and the ICRC</para>
+        <para>
+          <glossterm>International</glossterm>
+          <glossterm>humanitarian</glossterm>
+          <glossterm>programs</glossterm>, such as managed by
+          the <orgname>UN</orgname> and the <orgname>ICRC</orgname>.
+        </para>
       </listitem>
     </itemizedlist>
 
- xml:id="&projid;.devel.admin.avail">    <para>
-      The Gazebo Project shall serve as a content repository and
-      content presentation portal for public web content developed
-      around those topics, so far as the content may extend on any
-      single, discrete knowledge model developed within the Gazebo
-      Project.
+    <para>
+      The &gproj; <glossterm>shall</glossterm> serve as a
+      <glossterm>content repository</glossterm> and <glossterm>content
+      presentation portal</glossterm> for
+      <glossterm>public</glossterm> <glossterm>web content</glossterm>
+      developed around those <glossterm>topics</glossterm>, so far as
+      the content may extend on any single, discrete
+      <glossterm>knowledge model</glossterm>
+      developed within the &gproj;.
     </para>
 
   </preface>
@@ -84,7 +129,7 @@
       <chapter xml:id="&projid;.devel.admin.avail">
         <title>Availability</title>
         <simplesect>
-          <title>Gazebo Project Static Content Site</title>
+          <title>&gproj; Static Content Site</title>
           <remark>
             namely <link xlink:href="http://gazebohub.github.io/"
             >gazebohub.github.io</link>
@@ -94,7 +139,7 @@
         </simplesect>
 
         <simplesect>
-          <title>Gazebo Project Dynamic Content Site</title>
+          <title>&gproj; Dynamic Content Site</title>
           <remark>
             namely <link xlink:href="http://portal-gproj.rhcloud.com/"
             >portal-gproj.rhcloud.com</link>
@@ -105,7 +150,7 @@
 
 
          <simplesect>
-          <title>Gazebo Project Web Workspace</titele>
+          <title>&gproj; Web Workspace</titele>
           <remark>
             namely <link xlink:href="https://github.com/GazeboHub/gproj-web-workspace"
             ><systemitem

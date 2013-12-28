@@ -7,8 +7,12 @@
 >
 
 
-<!-- -->
+<!-- Orgs -->
+
+<!ENTITY gproj
+        "<orgname>Gazebo Project</orgname>"
+>
 
 <!ENTITY github
-        "<productname>GitHub</productname>"
+        "<orgname>GitHub</orgname>"
 >
