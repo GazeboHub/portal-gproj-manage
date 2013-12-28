@@ -8,7 +8,8 @@
      xml:id="&projid;.devel"
      version="ghbook-1.0"
      >
-  <title>&project; Developer Documentation</title>
+  <title>&project; Development</title>
+  <subtitle>Planning and Reference Guide</subtitle>
 
 
   <preface xml:id="&projid;.devel.overview">
@@ -128,7 +129,7 @@
 
       <chapter xml:id="&projid;.devel.admin.www">
         <title>&gproj; Fundamental Web Resources</title>
-        
+
         <simplesect xml:id="r.net.io.github.gazebohub".>
         <!-- Work Product Definition: gazebohub.github.io -->
           <title>&gproj; Static Content Site</title>
@@ -187,9 +188,9 @@
                 <glossterm>cartridge</glossterm> hosted on
                 <xref linkend="r.svc.oso"/></entry>
                 <entry><simplelist>
-                	<member>portal</member>
-                	<member>portal-gproj-manage</member>
-                	</simplelist></entry>
+                        <member>portal</member>
+                        <member>portal-gproj-manage</member>
+                        </simplelist></entry>
               </row>
               <row xml:id="r.plan.m2">
                 <entry><systemitem class="resource">M2</systemitem></entry>
@@ -205,7 +206,7 @@
                 workflow</entry>
                 <entry>TBD</entry>
               </row>
-              <row xml:id="r.plan.mTBD"> 
+              <row xml:id="r.plan.mTBD">
                 <entry><acronym>TBD</acronym></entry>
                 <entry><acronym>TBD</acronym></entry>
                 <entry>Planning</entry>
@@ -222,9 +223,301 @@
 
   <part xml:id="&projid;.devel.c">
     <title>&project; Components Reference</title>
-    
+
+    <preface>
+      <title>&project; Components Overview</title>
+
+      <para>
+        The set of &project; <glossterm>components</glossterm>,
+        as denoted in this section of the <xref
+        linkend="&projid;.devel"/> <glossterm>guide</glossterm>, is
+        comprised of both the set of <glossterm>work areas</glossterm>
+        comprising the development of the set of &project;
+        <glossterm>deliverable</glossterm> items, and the set of those
+        <glossterm>deliverable</glossterm> items. For purpose of
+        <emphasis>semantic clarity</emphasis>, this
+        <glossterm>guide</glossterm> draws a distinction
+        between, respectively, the <glossterm>work areas</glossterm>
+        and the <glossterm>items</glossterm> that would be produced in
+        those <glossterm>work areas</glossterm>.
+      </para>
+
+      <para>
+        In the &project;,
+        each individual <glossterm>work area</glossterm> is developed
+        with an independent focus, centering around a set of explicit
+        and implied <glossterm>goals</glossterm> for the development of
+        <glossterm>components</glossterm> in that <glossterm>work
+        area</glossterm>. Regarding the abstract extent to which the
+        <glossterm>goals</glossterm> in a single <glossterm>work
+        area</glossterm> have been documented explicitly, that
+        abstract extent may be viewed as representing a function of
+        two abstract inputs: The amount of time invested in
+        documenting the work area; the amount of time invested in
+        developing software components in the work area.
+      </para>
+
+      <para>
+        Each abstract <glossterm>work area</glossterm> in the
+        &project; is comprised of one or more <glossterm>source
+        tree</glossterm> components, such that may referred to
+        conventionally as representing an individual
+        <glossterm>project</glossterm> within the &project;
+        <glossterm>meta-project</glossterm> or <glossterm>master work
+        area</glossterm>.
+      </para>
+
+      <para>
+        Excepting the <xref linkend="r.net.com.rhcloud.portal-gproj"/>,
+        whose source code is maintained privately out of concern for
+        avoiding leakgage of individual credentials for services used
+        in the platform of the project, the source code of all other
+        <glossterm>source tree</glossterm> components developed in
+        &project; is provided to the public, typically as licensed
+        under terms of the Eclipse Public License. Although &project;
+        <glossterm>shall</glossterm> make use of software components
+        not available under free/open source licensing terms, this
+        usage <glossterm>shall not</glossterm> be conducted as to
+        impede the development of existing free/open source software
+        components.
+      </para>
+
+
+    </preface>
+
+    <reference xml:id="&projid;.devel.c.ref">
+      <title>&project; Component Reference Pages</title>
+
+      <refentry xml:id="r.c.gprog-web-workspace">
+        <refnamediv>
+          <refname>
+            <systemitem class="resource"
+                        >gproj-web-workspace</systemitem>
+          </refname>
+          <refpurpose>&project; master source tree</refpurpose>
+          <refclass>Source Tree Component</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para>
+            The <systemitem class="resource"
+                        >gproj-web-workspace</systemitem>
+            <glossterm>source tree</glossterm> is maintained for
+            purpose of convenience, in management and organization of
+            the individual work areas in the &project; <glossterm>master
+            work area</glossterm>. The <glossterm>source
+            tree</glossterm> is comprised primarily of a series of
+            &git; <glossterm>submodule</glossterm> components,
+            organized into two categories.
+          </para>
+
+          <table>
+            <title>
+              Source Tree Categories in
+              <systemitem class="resource"
+                          >gproj-web-workspace</systemitem>
+            </title>
+            <tgroup cols="2">
+              <thead>
+                <row>
+                  <entry>Category Name</entry>
+                  <entry>Maven Artifact ID</entry>
+                  <entry>Summary</entry>
+                  <entry>Direct Components</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>
+                    <systemitem class="resource"
+                                     >site</systemitem>
+                  </entry>
+                  <entry>
+                    <systemitem class="resource"
+                                >ws.gazebo.openshift.gproj:gproj-sites</systemitem>
+                  </entry>
+                  <entry>
+                    Web presence development and web resource
+                    management
+                  </entry>
+                  <entry>
+                    <simplelist>
+                      <member><xref linkend="r.c.portal-gproj-manage"/></member>
+                      <member><xref linkend="r.c.gproj-ghub-site-manage"/></member>
+                    </simplelist>
+                  </entry>
+                </row>
+                <row>
+                  <entry>
+                    <systemitem class="resource"
+                                     >project</systemitem>
+                  </entry>
+                  <entry>
+                    Software Component Development
+                  </entry>
+                  <entry>
+                    <systemitem class="resource"
+                                >ws.gazebo.openshift.gproj:gproj-projects</systemitem>
+                  </entry>
+                  <entry>
+                    <simplelist>
+                      <member><xref linkend="r.c.gproj-resource-lab"/></member>
+                      <member><xref linkend="r.c.gproj-km"/></member>
+                      <member><xref linkend="r.c.archetype-oso-servlet"/></member>
+                      <member><xref linkend="r.c.ghub-doc"/></member>
+                      <member><xref linkend="r.c.gproj-project-manage"/></member>
+                    </simplelist>
+                  </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+
+        </refsect1>
+      </refentry>
+
+
+      <refentry xml:id="r.c.portal-gproj-manage">
+        <refnamediv>
+          <refname>
+            <systemitem class="resource"
+                        >portal-gproj-manage</systemitem>
+          </refname>
+          <refpurpose>
+            Management of <systemitem
+            class="domainname">portal-gproj.rhcloud.com</systemitem>
+            web and network resources
+          </refpurpose>
+          <refclass>Source Tree Component</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para></para>
+        </refsect1>
+      </refentry>
+
+      <refentry xml:id="r.c.gproj-ghub-site-manage">
+        <refnamediv>
+          <refname>
+            <systemitem class="resource"
+                        >gproj-ghub-site-manage</systemitem>
+          </refname>
+          <refpurpose>
+            Management of <systemitem
+            class="domainname">gazebohub.github.io</systemitem> web
+            resources
+          </refpurpose>
+          <refclass>Source Tree Component</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para></para>
+        </refsect1>
+      </refentry>
+
+      <refentry xml:id="r.c.gproj-resource-lab">
+        <refnamediv>
+          <refname>
+            <systemitem class="resource"
+                        >gproj-resource-lab</systemitem>
+          </refname>
+          <refpurpose>
+            <!-- FIXME: Shorten this refpurpose, moving the full text
+            into the description section -->
+            Extension of <xref linkend="r.spec.jcr"/> and <xref
+            linkend="r.spec.webdav"/> components via <xref
+            linkend="r.app.modeshape"/> and
+            <xref linkend="r.app.jacorb"/>, for purpose of development
+            of an <glossterm>abstract filesystem</glossterm> concept
+            for transitive represention of a concept of generic
+            <glossterm>project</glossterm>
+            <glossterm>workspaces</glossterm>, in a
+            <glossterm>platform-agnostic</glossterm> framework
+          </refpurpose>
+          <refclass>Source Tree Component</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para></para>
+        </refsect1>
+      </refentry>
+
+      <refentry xml:id="r.c.gproj-km">
+        <refnamediv>
+          <refname>
+            <systemitem class="resource"
+                        >gproj-km</systemitem>
+          </refname>
+          <refpurpose>
+            Development of tools for <glossterm>knowledge
+            modeling</glossterm> and <glossterm>knowledge resource
+            management</glossterm>
+          </refpurpose>
+          <refclass>Source Tree Component</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para></para>
+        </refsect1>
+      </refentry>
+
+      <refentry xml:id="r.c.archetype-oso-servlet-manage">
+        <refnamediv>
+          <refname>
+            <systemitem class="resource"
+                        >archetype-oso-servlet-manage</systemitem>
+          </refname>
+          <refpurpose>
+            Utility for creating, with <xref linkend="r.app.mvn"/>,
+            projects using Java web containers
+            provided by <xref linkend="r.svc.oso"/>
+          </refpurpose>
+          <refclass>Source Tree Component</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para></para>
+        </refsect1>
+      </refentry>
+
+      <refentry xml:id="r.c.ghub-doc">
+        <refnamediv>
+          <refname>
+            <systemitem class="resource"
+                        >ghub-doc</systemitem>
+          </refname>
+          <refpurpose>
+            Documentation Toolchain and Documentation Process Automation
+          </refpurpose>
+          <refclass>Source Tree Component</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para></para>
+        </refsect1>
+      </refentry>
+
+      <refentry xml:id="r.c.gproj-project-manage">
+        <refnamediv>
+          <refname>
+            <systemitem class="resource"
+                        >gproj-project-manage</systemitem>
+          </refname>
+          <refpurpose>
+            Shared Project Management Resources
+          </refpurpose>
+          <refclass>Source Tree Component</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para></para>
+        </refsect1>
+      </refentry>
+    </reference>
+
+
   </part> <!-- Components Reference -->
-  
+
   <part xml:id="&projid;.devel.p">
     <title>&project; Platform Reference</title>
     <!-- To Do: Divide into individual sections (provide an index for each)
