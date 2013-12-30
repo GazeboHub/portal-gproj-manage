@@ -976,7 +976,7 @@
                   </row>
                   <row>
                     <entry><varname>OPENSHIFT_JBOSSAS_REMOTING_PORT</varname></entry>
-                    <entry>5455</entry>
+                    <entry>4447</entry>
                     <entry><markup>socket-binding</markup> <varname>remoting</varname></entry>
                   </row>
                   <row>
