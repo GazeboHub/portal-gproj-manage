@@ -947,7 +947,11 @@
                   <row>
                     <entry><varname>OPENSHIFT_JBOSSAS_HTTP_PORT</varname></entry>
                     <entry>8080</entry>
-                    <entry><markup>socket-binding</markup> <varname>http</varname></entry>
+                    <entry><markup>socket-binding</markup>
+                    <varname>http</varname>. Under port forwarding,
+                    port may be cosumed initially by
+                    <application>haproxy</application>, resulting in a
+                    different local port number</entry>
                   </row>
                   <row>
                     <entry><varname>OPENSHIFT_JBOSSAS_CLUSTER_PORT</varname></entry>
@@ -994,6 +998,15 @@
                     <entry>50899</entry>
                     <entry><remark>TBD</remark></entry>
                   </row>
+                  <row>
+                    <entry>N/A</entry>
+                    <entry>3528</entry>
+                    <entry><markup>socket-binding</markup>
+                    <varname>jacorb</varname>;
+                    available to application developers, via port
+                    forwarding</entry>
+                  </row>
+
                 </tbody>
               </tgroup>
             </table>
