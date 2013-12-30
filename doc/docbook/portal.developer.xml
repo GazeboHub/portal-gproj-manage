@@ -789,13 +789,131 @@
       </refentry>
 
       <refentry xml:id="r.app.liferay">
-       <!-- class: web application -->
-       <!-- Describe: "Everything Liferay" (???). Xref r.c.portal -->
+        <refnamediv>
+          <refname><productname>Liferay</productname></refname>
+          <refclass>Web Application</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para>
+            Liferay provides an implementation of the Java Portlet
+            Specification 2.0, extended with features for web content
+            management, workflow management, social office integration,
+            portal visual design and layout, portal extensions, and
+            overall portal service configuration
+          </para>
+        </refsect1>
+        <refsect1>
+          <title>See Also</title>
+          <simplelist>
+            <member><xref linkend="r.c.portal"/></member>
+            <member><xref linkend="r.app.jbossas"/></member>
+          </simplelist>
+        </refsect1>
+        <refsect1>
+          <title>External Links</title>
+          <simplelist>
+            <member>
+              <link xlink:href="http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en"
+                    >Installing Liferay on JBoss 7 &ndash;
+              Liferay 6.2 User Guide</link>
+            </member>
+            <member>
+              <link xlink:href="http://www.liferay.com/community/wiki/-/wiki/Main/JBoss+AS7+tips"
+                    >JBoss AS 7 Tips &ndash; Liferay Wiki</link>
+            </member>
+            <member>
+              <link xlink:href="https://jcp.org/en/jsr/detail?id=286"
+                    >JSR 286: Portlet Specification 2.0</link>
+            </member>
+          </simplelist>
+        </refsect1>
       </refentry>
 
       <refentry xml:id="r.app.jbossas">
-       <!-- class: web services provider, enterprise application container -->
-       <!-- Describe: "Everything JBossAS7" (???). Xref r.c.portal -->
+        <refnamediv>
+          <refname><productname>JBoss AS 7</productname></refname>
+          <refpurpose>Application Server</refpurpose>
+          <refclass>Web Services Provider</refclass>
+          <refclass>Enterprise Applciation Container</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para><productname>JBoss AS 7</productname> provides
+           application services for applications of the Java Platform,
+          Enterprise Edition.</para>
+        </refsect1>
+        <refsect1>
+          <title>Configuration</title>
+          <para>
+            <productname>JBoss AS 7</productname> is configured via
+            <glossterm>profile</glossterm> information,
+            describing configurations of individual
+            <glossterm>module</glossterm>
+            extensions. <glossterm>Module</glossterm> extensions are
+            defined via <filename>module.xml</filename> files within
+            the <productname>JBoss AS 7</productname>
+            <filename>modules</filename> directory, then loaded and
+            configured via <glossterm>profile</glossterm> information
+            either in <filename>standalone.xml</filename>, for
+            <emphasis>stand alone</emphasis> <productname>JBoss AS
+            7</productname> configurations, or in
+            <filename>domain.xml</filename> and
+            <filename>host.xml</filename> for <emphasis>multi
+            domain</emphasis ><productname>JBoss AS
+            7</productname> configurations.
+          </para>
+          <refsect2>
+            <title>Configuration Layout on OpenShift</title>
+            <para>
+              In using the <systemitem
+              class="resource">jbossas</systemitem>
+              <glossterm>cartrdige</glossterm> providing
+              <productname>JBoss AS 7</productname> on
+              <xref linkend="r.svc.oso"/>, <productname>JBoss AS
+              7</productname> is configured in
+              <emphasis>standalone</emphasis> mode. The
+              <filename>standalone.xml</filename> file is
+              available within the <glossterm>application</glossterm>
+              <glossterm>source tree</glossterm>'s
+              <filename>.openshift/config</filename>
+              <glossterm>directory</glossterm>.
+            </para>
+            <para>
+              The <productname>JBoss AS 7</productname>
+              <filename>modules</filename> directory, within an
+              <glossterm>application</glossterm> <glossterm>source
+              tree</glossterm>'s
+              <filename>.openshift/config</filename>
+              <glossterm>directory</glossterm> serves effectively as
+              an <emphasis>overlay</emphasis> onto the application's
+              <filename>jbossas/modules</filename>
+              directory. Developers can add
+              <glossterm>module</glossterm> definitions into
+              <filename>.openshift/config/modules</filename>, such
+              that will be added as to override the existing
+              <glossterm>module</glossterm> definitions within the
+              application's <filename>jbossas/modules</filename>
+              <glossterm>directory</glossterm>.
+            </para>
+          </refsect2>
+          <refsect2>
+            <title>Configuration &ndash; External Links</title>
+            <simplelist>
+              <member>
+                <link xlink:href="https://docs.jboss.org/author/display/AS7/General+configuration+concepts"
+                      >General Configuration Concepts &ndash;
+                JBoss AS 7.0</link>
+              </member>
+            </simplelist>
+          </refsect2>
+        </refsect1>
+       <refsect1>
+         <title>See Also</title>
+         <simplelist>
+           <member><xref linkend="r.c.portal"/></member>
+         </simplelist>
+       </refsect1>
       </refentry>
 
       <refentry xml:id="r.app.haproxy">
