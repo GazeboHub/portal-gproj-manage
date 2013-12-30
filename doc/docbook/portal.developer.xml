@@ -891,7 +891,8 @@
             7</productname> configurations.
           </para>
           <refsect2>
-            <title>Configuration Layout on OpenShift</title>
+            <title><productname>JBoss AS 7</productname> Configuration
+            Layout on <productname>OpenShift</productname></title>
             <para>
               In using the <systemitem
               class="resource">jbossas</systemitem>
@@ -925,14 +926,78 @@
             </para>
           </refsect2>
           <refsect2>
-            <title>Configuration &ndash; External Links</title>
-            <simplelist>
-              <member>
-                <link xlink:href="https://docs.jboss.org/author/display/AS7/General+configuration+concepts"
-                      >General Configuration Concepts &ndash;
-                JBoss AS 7.0</link>
-              </member>
-            </simplelist>
+            <title>Network Ports and Usage &ndash;
+            <productname>JBoss AS 7</productname> on
+            <productname>OpenShift</productname></title>
+            <table>
+              <title>
+                <productname>JBoss AS 7</productname>
+                Network Ports
+                on <productname>OpenShift</productname>
+              </title>
+              <tgroup cols="3">
+                <thead>
+                  <row>
+                    <entry>Environment Variable</entry>
+                    <entry>Port</entry>
+                    <entry>Usage</entry>
+                  </row>
+                </thead>
+                <tbody>
+                  <row>
+                    <entry><varname>OPENSHIFT_JBOSSAS_HTTP_PORT</varname></entry>
+                    <entry>8080</entry>
+                    <entry><markup>socket-binding</markup> <varname>http</varname></entry>
+                  </row>
+                  <row>
+                    <entry><varname>OPENSHIFT_JBOSSAS_CLUSTER_PORT</varname></entry>
+                    <entry>7600</entry>
+                    <entry><markup>socket-binding</markup> <varname>jgroups-tcp</varname></entry>
+                  </row>
+                  <row>
+                    <entry><varname>OPENSHIFT_JBOSSAS_MANAGEMENT_NATIVE_PORT</varname></entry>
+                    <entry>9999</entry>
+                    <entry><markup>socket-binding</markup> <varname>management-native</varname></entry>
+                  </row>
+                  <row>
+                    <entry><varname>OPENSHIFT_JBOSSAS_MANAGEMENT_HTTP_PORT</varname></entry>
+                    <entry>9990</entry>
+                    <entry><markup>socket-binding</markup> <varname>management-http</varname></entry>
+                  </row>
+                  <row>
+                    <entry><varname>OPENSHIFT_JBOSSAS_MESSAGING_PORT</varname></entry>
+                    <entry>5445</entry>
+                    <entry><markup>socket-binding</markup> <varname>messaging</varname></entry>
+                  </row>
+                  <row>
+                    <entry><varname>OPENSHIFT_JBOSSAS_MESSAGING_THROUGHPUT_PORT</varname></entry>
+                    <entry>5455</entry>
+                    <entry><markup>socket-binding</markup> <varname>messaging-THROUGHPUT</varname></entry>
+                  </row>
+                  <row>
+                    <entry><varname>OPENSHIFT_JBOSSAS_REMOTING_PORT</varname></entry>
+                    <entry>5455</entry>
+                    <entry><markup>socket-binding</markup> <varname>remoting</varname></entry>
+                  </row>
+                  <row>
+                    <entry><varname>OPENSHIFT_JBOSSAS_CLUSTER_PROXY_PORT</varname></entry>
+                    <entry>50897</entry>
+                    <entry>jgroups tcp stack <markup>property</markup> <varname>external_port</varname></entry>
+                  </row>
+                  <row>
+                    <entry><varname>OPENSHIFT_JBOSSAS_CLUSTER_PORT</varname></entry>
+                    <entry>7600</entry>
+                    <entry>jgroups tcp stack <markup>property</markup> <varname>bind_port</varname></entry>
+                  </row>
+                  <row>
+                    <entry><varname>OPENSHIFT_JBOSSAS_REMOTING_PROXY_PORT</varname></entry>
+                    <entry>50899</entry>
+                    <entry><remark>TBD</remark></entry>
+                  </row>
+
+                </tbody>
+              </tgroup>
+            </table>
           </refsect2>
         </refsect1>
        <refsect1>
@@ -944,8 +1009,13 @@
        <refsect1>
          <title>External Links</title>
          <simplelist>
-            <member>
-              <link xlink:href="http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en"
+           <member>
+             <link xlink:href="https://docs.jboss.org/author/display/AS7/General+configuration+concepts"
+                   >General Configuration Concepts &ndash;
+             JBoss AS 7.0</link>
+           </member>
+           <member>
+             <link xlink:href="http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en"
                     >Installing Liferay on JBoss 7 &ndash;
               Liferay 6.2 User Guide</link>
             </member>
