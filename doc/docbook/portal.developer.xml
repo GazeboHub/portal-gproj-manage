@@ -994,10 +994,12 @@
                     <entry>50899</entry>
                     <entry><remark>TBD</remark></entry>
                   </row>
-
                 </tbody>
               </tgroup>
             </table>
+            <para>See Also: <link xlink:href="https://www.openshift.com/blogs/getting-started-with-port-forwarding-on-openshift"
+                        >Getting Started with Port Forwarding on
+            OpenShift &ndash; OpenShift Blog</link></para>
           </refsect2>
         </refsect1>
        <refsect1>
