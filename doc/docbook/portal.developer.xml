@@ -773,7 +773,7 @@
           <title>External Links</title>
           <simplelist>
             <member><link xlink:href="https://access.redhat.com/site/documentation/en-US/OpenShift/2.0/html/User_Guide/index.html"
-                          >User Guide &ndash; OpenShift Online</link></member>
+                           >User Guide &ndash; OpenShift Online</link></member>
             <member><link xlink:href="https://www.openshift.com/blogs/getting-started-with-port-forwarding-on-openshift"
                         >Getting Started with Port Forwarding on
             OpenShift &ndash; OpenShift Blog</link></member>
@@ -852,6 +852,13 @@
             <member>
               <link xlink:href="http://www.liferay.com/documentation/liferay-portal/6.2/user-guide"
                   >User Guide &ndash; Liferay Portal 6.2</link>
+            </member>
+            <member>
+              <link
+                  xlink:href="https://www.openshift.com/kb/kb-e1088-how-to-deploy-pre-compiled-java-applications-war-and-ear-files-onto-your-openshift-gear"
+                  >How to deploy pre compiled java applications (WAR
+              and EAR files) onto your OpenShift gear using the java
+              cartridges &ndash; OpenShift KB-E1088</link>
             </member>
           </simplelist>
         </refsect1>
