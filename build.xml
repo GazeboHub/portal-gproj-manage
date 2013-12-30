@@ -12,17 +12,19 @@
   <property environment="env"/>
 
   <echo>Importing properties from pom.xml</echo>
-  <xmlproperty file="pom.xml" keeproot="false"/>
+  <xmlproperty file="${basedir}/pom.xml" keeproot="false"/>
 
   <property name="app.source.dir"
-            value="${basedir}/publish/${app.openshift.name}-${app.openshift.namespace}"/>
+            value="${basedir}/publish/${properties.app.openshift.name}-${properties.app.openshift.namespace}"/>
   <property name="app.modules.dir"
             value="${app.source.dir}/.openshift/config/modules"/>
 
 
   <!-- Properties - Misc -->
+  <property name="app.liferay.version.base"
+            value="6.2.0-ce-ga1"/>
   <property name="app.liferay.version"
-            value="6.2.0-ce-ga1-20131101192857659"/>
+            value="${app.liferay.version.base}-20131101192857659"/>
   <property name="app.liferay.version.name"
             value="6.2.0 GA1"/>
 
@@ -52,6 +54,8 @@
             value="${basedir}/staging/liferay"/>
   <property name="archive.dependencies.path"
             value="${archive.stagingPath}/${archive.dependencies.name}"/>
+  <property name="archive.dependencies.output"
+            value="${archive.stagingPath}/dependencies"/>
   <property name="archive.liferay.path"
             value="${archive.stagingPath}/${archive.liferay.name}"/>
 
@@ -85,31 +89,21 @@
   <target name="download-upstream"
           depends="download-dependencies, download-liferay"/>
 
+  <target name="install-dependencies" depends="download-dependencies">
+    <mkdir dir="${archive.dependencies.output}"/>
+    <unzip src="${archive.dependencies.path}"
+           dest="${archive.dependencies.output}"/>
+    <mkdir dir="${app.modules.dir}/com/liferay/portal/main"/>
+    <copy todir="${app.modules.dir}/com/liferay/portal/main">
+      <fileset dir="${basedir}/src/main/resources/modules/com/liferay/portal/main/">
+        <filename name="module.xml"/>
+      </fileset>
+      <fileset dir="${archive.dependencies.output}/liferay-portal-dependencies-${app.liferay.version.base}">
+        <exclude name="hsql.jar"/>
+      </fileset>
+    </copy>
 
-  <!-- Install - Dependencies -->
-
-  <!-- Overview of Procedure:
-
-       0) depends=download-dependencies
-
-       1) Unzip ${archive.dependencies.path} to
-       ${archive.dependencies.output}
-
-       2) mkdir  ${app.modules.dir}/com/liferay/portal/main
-
-       3) Move contents of ${archive.dependencies.output}
-       to ${app.modules.dir}/com/liferay/portal/main
-
-       4) rmdir ${archive.dependencies.output}
-
-        - TO DO: Create com.liferay.portal.main.module.xml
-        as per http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en
-
-       5) copy com.liferay.portal.main.module.xml to file
-       ${app.modules.dir}/com/liferay/portal/main/module.xml
-
-       6) Echo "Please git-add and git-commit under ${app.modules.dir}"
-  -->
+  </target>
 
   <!-- Install - Liferay -->
 
@@ -147,8 +141,10 @@
        * Ensure properties for Catalina
        * Defne JAAS domain PortalRealm
        * Ensure jsp-configuration within default-host in web domain
-       * Define LiferayPool datasource
+       * Define datasource LiferayPool
        * Define MailSession in mail domain
+          * set USER_MAIL_USERNAME and USER_MAIL_PASSWORD in ${app.source.dir}/.openshift/action_hooks/pre_start_jbossas
+          * in standalone.xml, login name="${USER_MAIL_USERNAME}" password="${USER_MAIL_PASSWORD}"
 
         SIDEBAR: GPORTAL SECURITY POLICY FOR EMAIL
         * Determine how the MailSesson config is used in Liferay
@@ -175,10 +171,20 @@ echo "pre_start JAVA_OPTS: ${JAVA_OPTS}"
 
   <!--
       AT INSTALL TIME:
+      0) ensure that the 'openshift' profile is disabled
+      in ${app.soure.dir}/pom.xml
+
       1) SCP ROOT.war to OpenShift application
-      2) User should manually "rhc app -n ${app.openshift.namespace} -a ${app.openshift.name} stop"
-      3) User must manually "git commit -m ... && git push" under the modified ${app.source.dir}
-      4) User should manually "rhc app -n ${app.openshift.namespace} -a ${app.openshift.name} start"
+
+      2) User should manually
+      "rhc app -n ${app.openshift.namespace} -a ${app.openshift.name} stop"
+
+      3) User must manually
+      "git commit -m ... && git push"
+      under the modified ${app.source.dir}
+
+      4) User should manually
+      "rhc app -n ${app.openshift.namespace} -a ${app.openshift.name} start"
       then monitor http://${app.openshift.domain}/
       and "rhc tail -n ${app.openshift.namespace}
       ${app.openshift.name}"
