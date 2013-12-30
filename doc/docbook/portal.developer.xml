@@ -743,6 +743,7 @@
 
     <reference xml:id="&projid;.devel.p.ref">
       <title>&project; Platform Reference Pages</title>
+
       <refentry xml:id="r.shell.rhc">
        <!-- class: shell command -->
        <!-- Describe: Installation; usage. -->
@@ -750,15 +751,39 @@
       </refentry>
 
       <refentry xml:id="r.svc.oso">
-        <!-- class: service -->
+        <refnamediv>
+          <refname><productname>OpenShift Online</productname></refname>
+          <refpurpose>Web Service Platform</refpurpose>
+          <refclass>Service</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para></para>
+        </refsect1>
         <!-- Describe: Architecture -->
         <!-- Provide links to: Further Documentation -->
+        <refsect1>
+          <title>See Also</title>
+          <simplelist>
+            <member><xref linkend="r.svc.osorgin"/></member>
+            <member><xref linkend="r.shell.rhc"/></member>
+          </simplelist>
+        </refsect1>
+        <refsect1>
+          <title>External Links</title>
+          <simplelist>
+            <member><link xlink:href="https://access.redhat.com/site/documentation/en-US/OpenShift/2.0/html/User_Guide/index.html"
+                          >User Guide &ndash; OpenShift Online</link></member>
+        </refsect1>
       </refentry>
 
       <refentry xml:id="r.svc.osorgin">
        <!-- class: platform service -->
         <!-- Describe: Architecture -->
         <!-- Provide links to: Further Documentation -->
+        <!-- e.g.
+        http://openshift.github.io/documentation/oo_deployment_guide_comprehensive.html
+        -->
       </refentry>
 
       <refentry xml:id="r.svc.git">
@@ -796,8 +821,9 @@
         <refsect1>
           <title>Description</title>
           <para>
-            Liferay provides an implementation of the Java Portlet
-            Specification 2.0, extended with features for web content
+            <productname>Liferay</productname> provides an
+            implementation of the Java Portlet Specification 2.0,
+            extended with features for web content
             management, workflow management, social office integration,
             portal visual design and layout, portal extensions, and
             overall portal service configuration
@@ -808,23 +834,21 @@
           <simplelist>
             <member><xref linkend="r.c.portal"/></member>
             <member><xref linkend="r.app.jbossas"/></member>
+            <!--
+                 <member><xref linkend="r.lib.vaadin"/></member>
+            -->
           </simplelist>
         </refsect1>
         <refsect1>
           <title>External Links</title>
           <simplelist>
             <member>
-              <link xlink:href="http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en"
-                    >Installing Liferay on JBoss 7 &ndash;
-              Liferay 6.2 User Guide</link>
-            </member>
-            <member>
-              <link xlink:href="http://www.liferay.com/community/wiki/-/wiki/Main/JBoss+AS7+tips"
-                    >JBoss AS 7 Tips &ndash; Liferay Wiki</link>
-            </member>
-            <member>
               <link xlink:href="https://jcp.org/en/jsr/detail?id=286"
                     >JSR 286: Portlet Specification 2.0</link>
+            </member>
+            <member>
+              <link xlink:href="http://www.liferay.com/documentation/liferay-portal/6.2/user-guide"
+                  >User Guide &ndash; Liferay Portal 6.2</link>
             </member>
           </simplelist>
         </refsect1>
@@ -912,6 +936,20 @@
          <title>See Also</title>
          <simplelist>
            <member><xref linkend="r.c.portal"/></member>
+         </simplelist>
+       </refsect1>
+       <refsect1>
+         <title>External Links</title>
+         <simplelist>
+            <member>
+              <link xlink:href="http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en"
+                    >Installing Liferay on JBoss 7 &ndash;
+              Liferay 6.2 User Guide</link>
+            </member>
+            <member>
+              <link xlink:href="http://www.liferay.com/community/wiki/-/wiki/Main/JBoss+AS7+tips"
+                    >JBoss AS 7 Tips &ndash; Liferay Wiki</link>
+            </member>
          </simplelist>
        </refsect1>
       </refentry>
