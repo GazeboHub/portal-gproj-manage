@@ -953,6 +953,11 @@
               <link xlink:href="http://www.liferay.com/community/wiki/-/wiki/Main/JBoss+AS7+tips"
                     >JBoss AS 7 Tips &ndash; Liferay Wiki</link>
             </member>
+            <member>
+              <link xlink:href="https://github.com/openshift/origin-server/tree/master/cartridges/openshift-origin-cartridge-jbossas"
+                    ><systemitem class="resource">openshift-origin-cartridge-jbossas</systemitem>
+              source code</link>
+            </member>
          </simplelist>
        </refsect1>
       </refentry>
