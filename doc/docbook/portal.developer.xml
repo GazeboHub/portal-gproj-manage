@@ -453,6 +453,149 @@
           </para>
         </refsect1>
         <refsect1>
+          <title>Configuration</title>
+          <refsect2>
+            <title>Iniital Application Configuration</title>
+            <para>
+              The <productname>portal</productname>
+              <glossterm>application</glossterm> utilizes the
+              following <xref linkend="r.svc.oso"/>
+              <glossterm>cartridges</glossterm>
+            </para>
+            <simplelist>
+              <member>
+                <systemitem
+                    class="resource">jbossas</systemitem>
+                version <productnumber>7</productnumber>,
+                providing <xref linkend="r.app.jbossas"/>
+              </member>
+              <member>
+                <systemitem
+                    class="resource"></systemitem>
+                version <productnumber>9.2</productnumber>
+                providing <xref linkend="r.app.pgsql"/>
+                <productnumber>9.2</productnumber>
+              </member>
+              <member>
+                <systemitem
+                    class="resource">haproxy</systemitem>
+                version <productnumber>1.4</productnumber>, providing
+                <xref linkend="r.app.haproxy"/> version
+                <productnumber>1.4</productnumber>,
+                installed with
+                <systemitem
+                    class="resource">jbossas</systemitem>
+              </member>
+            </simplelist>
+            <para>The application was created with the following shell
+            command</para>
+            <programlisting
+                >rhc app create portal jbossas-7 -s postgresql</programlisting>
+          </refsect2>
+          <refsect2>
+            <title>
+              Installing <productname>Liferay</productname> onto
+              <productname>JBoss AS 7</productname> on
+              <productname>OpenShift</productname>
+            </title>
+            <para>The <xref linkend="r.app.liferay"/> <emphasis>user
+            guide</emphasis> and <emphasis>wiki</emphasis> together
+            provide some convenient advice for installing
+            <productname>Liferay</productname> onto
+            <productname>JBoss AS 7</productname>.<footnote>
+            <simplelist>
+              <member><link
+                          xlink:href="http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installing-liferay-on-jboss-7-liferay-portal-6-2-user-guide-15-en"
+                          >Installing Liferay on JBoss 7 &ndash;
+              Liferay 6.2 User Guide</link></member>
+              <member><link
+                          xlink:href="http://www.liferay.com/community/wiki/-/wiki/Main/JBoss+AS7+tips"
+                          >JBoss AS 7 tips &ndash;  Liferay Wiki</link></member>
+            </simplelist>
+            </footnote> Some features and limitations onto
+            applications under <xref linkend="r.svc.oso"/>
+            <glossterm>may</glossterm> serve to require that that
+            material will be extended for the installation onto
+            <xref linkend="r.svc.oso"/>.
+            </para>
+
+            <refsect3>
+              <title>Configuration of <productname>JBoss</productname>
+              <glossterm>Modules</glossterm> Directory</title>
+
+              <para>The <systemitem
+              class="resource">jbossas</systemitem>
+              <glossterm>cartridge</glossterm> provides
+              the <glossterm>application</glossterm> developer with a
+              directory <filename>.openshift/config/modules</filename>
+              within the <glossterm>application</glossterm>
+              <glossterm>source tree</glossterm>. That
+              directory does not in itself provide the full, exclusive
+              set of <glossterm>module</glossterm> definitions onto
+              <xref linkend="r.app.jbossas"/>. However, <xref
+              linkend="r.app.jbossas"/> <glossterm>module</glossterm>
+              definitions can be added under that directory, such that
+              will be override the <xref
+              linkend="r.app.jbossas"/> <glossterm>module</glossterm>
+              definitions provided originally by the <xref
+              linkend="r.app.jbossas"/> <glossterm>cartridge</glossterm>.
+              </para>
+            </refsect3>
+
+            <refsect3>
+              <title>Installing <productname>Liferay</productname>
+              Dependencies</title>
+
+              <para>The <xref linkend="r.app.liferay"/> dependency
+              <glossterm>JAR</glossterm>s <glossterm>shall</glossterm>
+              be installed "as usual", excluding
+              <filename>hsql.jar</filename>, and including
+              the corresponding <filename>module.xml</filename>. The
+              files <glossterm>shall</glossterm> be installed under the
+              <glossterm>application</glossterm>
+              <glossterm>module</glossterm> directory
+              <filename>.openshift/config/modules</filename></para>
+            </refsect3>
+
+            <refsect3>
+              <title>Customizing <productname>JBoss</productname>
+              <filename>standalone.xml</filename></title>
+              <para></para>
+            </refsect3>
+
+            <refsect3>
+              <title>Placement of
+              <property>liferay.home</property></title>
+              <para></para>
+            </refsect3>
+
+            <refsect3>
+              <title>Contents and Placement of
+              <productname>Liferay</productname>
+              <filename>portal-ext.properties</filename></title>
+              <para></para>
+            </refsect3>
+
+            <refsect3>
+              <title>Modifying the upstream
+              <productname>Liferay</productname> web archive</title>
+              <para></para>
+            </refsect3>
+
+            <refsect3>
+              <title>Modifying <varname>JAVA_OPTS</varname> for
+              <productname>JBoss</productname></title>
+              <para></para>
+            </refsect3>
+
+            <refsect3>
+              <title>Deploying the <productname>Liferay</productname>
+              Dependencies and <productname>Liferay</productname> Web Archive</title>
+              <para></para>
+            </refsect3>
+          </refsect2>
+        </refsect1>
+        <refsect1>
           <title>See Also</title>
           <simplelist>
             <member><xref linkend="r.c.portal-gproj-manage"/></member>
@@ -610,6 +753,7 @@
           <para><remark>To Do</remark></para>
         </refsect1>
       </refentry>
+
     </reference>
 
   </part> <!-- Components Reference -->
@@ -1057,10 +1201,27 @@
       <refentry xml:id="r.app.haproxy">
        <!-- class: proxy/cluster/load balancing services provider -->
        <!-- Describe: Role in clustering and load balancing onto OSO (?). Xref r.c.portal -->
+       <refnamediv>
+         <refname>HAProxy</refname>
+         <refpurpose>Web Service Clustering and Load Balancing</refpurpose>
+         <refclass>Application</refclass>
+       </refnamediv>
+       <refsect1>
+         <title>Description</title>
+         <para></para>
+       </refsect1>
       </refentry>
 
       <refentry xml:id="r.app.pgsql">
-       <!-- class: RDBMS services provider -->
+        <refnamediv>
+          <refname><productname>PostgreSQL</productname></refname>
+          <refpurpose>RDBMS Services Provider</refpurpose>
+          <refclass>Appliation</refclass>
+        </refnamediv>
+        <refsect1>
+          <title>Description</title>
+          <para></para>
+        </refsect1>
        <!-- Describe: Role as RDBMS. Xref r.c.portal. Note PostGIS -->
       </refentry>
 
