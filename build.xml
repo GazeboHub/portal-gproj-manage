@@ -123,7 +123,7 @@
             mail.session.jndi.name=java:mail/MailSession
             admin.email.from.name=????
             admin.email.from.address=????
-            liferay.home=????
+            liferay.home=app-root/runtime/data/liferay ?????
 
       4) Using WAR task, build ROOT.war out of ${archive.liferay.output}
       cf.
